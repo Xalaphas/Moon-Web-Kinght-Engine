@@ -1,4 +1,4 @@
-name: Build Game Engine
+name: Build Moon Web Knight Engine
 
 on:
   push:
