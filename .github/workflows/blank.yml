@@ -1,0 +1,26 @@
+name: Build Game Engine
+
+on:
+  push:
+    branches:
+      - dev
+  pull_request:
+    branches:
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Set up CMake
+      uses: lukka/get-cmake@v3
+
+    - name: Build Project
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+        cmake --build .
